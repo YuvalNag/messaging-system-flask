@@ -1,0 +1,599 @@
+{
+	"id": "0fc4f999-cf18-4ca4-93c8-d75bbf2b06d4",
+	"name": "Messaging system",
+	"timestamp": "2020-06-02T21:01:36.607Z",
+	"collection_id": "c01726cc-172d-4e4f-9d54-acd6ff0e97be",
+	"folder_id": 0,
+	"environment_id": "4a30bc19-d32f-454c-a910-598f0a536e17",
+	"totalPass": 22,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "60694291-6d06-485f-b79f-abfab8c5fc14",
+			"name": "/register user1",
+			"url": "https://messaging-system-flask.herokuapp.com/register",
+			"time": 1057,
+			"responseCode": {
+				"code": 201,
+				"name": "CREATED"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"User1 created successfully": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"User1 created successfully": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1057
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"User1 created successfully": true
+				}
+			]
+		},
+		{
+			"id": "617a8b08-72cd-4d3b-b873-355cb2100072",
+			"name": "/register user2",
+			"url": "https://messaging-system-flask.herokuapp.com/register",
+			"time": 187,
+			"responseCode": {
+				"code": 201,
+				"name": "CREATED"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"User2 created successfully": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"User2 created successfully": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				187
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"User2 created successfully": true
+				}
+			]
+		},
+		{
+			"id": "4c17cba4-1cf3-4350-ae08-940bb67f5547",
+			"name": "/register user3",
+			"url": "https://messaging-system-flask.herokuapp.com/register",
+			"time": 182,
+			"responseCode": {
+				"code": 201,
+				"name": "CREATED"
+			},
+			"tests": {
+				"Status code is 201": true,
+				"User3 created successfully": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				},
+				"User3 created successfully": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				182
+			],
+			"allTests": [
+				{
+					"Status code is 201": true,
+					"User3 created successfully": true
+				}
+			]
+		},
+		{
+			"id": "14dbefe8-b51e-47c2-8d62-6b674b7ad633",
+			"name": "/register user3",
+			"url": "https://messaging-system-flask.herokuapp.com/register",
+			"time": 191,
+			"responseCode": {
+				"code": 401,
+				"name": "UNAUTHORIZED"
+			},
+			"tests": {
+				"Status code is 401": true,
+				"User3 already exist": true
+			},
+			"testPassFailCounts": {
+				"Status code is 401": {
+					"pass": 1,
+					"fail": 0
+				},
+				"User3 already exist": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				191
+			],
+			"allTests": [
+				{
+					"Status code is 401": true,
+					"User3 already exist": true
+				}
+			]
+		},
+		{
+			"id": "e91e2a47-afee-4322-8dce-9935a79ae9d1",
+			"name": "/auth user1",
+			"url": "https://messaging-system-flask.herokuapp.com/auth",
+			"time": 183,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"User1 get token": true
+			},
+			"testPassFailCounts": {
+				"User1 get token": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				183
+			],
+			"allTests": [
+				{
+					"User1 get token": true
+				}
+			]
+		},
+		{
+			"id": "97c4c5f8-e1c7-4af8-ae21-afa3541d2346",
+			"name": "/message",
+			"url": "https://messaging-system-flask.herokuapp.com/message/",
+			"time": 210,
+			"responseCode": {
+				"code": 201,
+				"name": "CREATED"
+			},
+			"tests": {
+				"Message 1 created": true
+			},
+			"testPassFailCounts": {
+				"Message 1 created": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				210
+			],
+			"allTests": [
+				{
+					"Message 1 created": true
+				}
+			]
+		},
+		{
+			"id": "bb5bb0cf-c35c-4f6e-94cf-b14ec0531cc3",
+			"name": "/message",
+			"url": "https://messaging-system-flask.herokuapp.com/message",
+			"time": 499,
+			"responseCode": {
+				"code": 201,
+				"name": "CREATED"
+			},
+			"tests": {
+				"Message 2 created": true
+			},
+			"testPassFailCounts": {
+				"Message 2 created": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				499
+			],
+			"allTests": [
+				{
+					"Message 2 created": true
+				}
+			]
+		},
+		{
+			"id": "e065cd6d-2cee-4330-8b47-c242b179dd58",
+			"name": "/messages",
+			"url": "https://messaging-system-flask.herokuapp.com/messages",
+			"time": 188,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Two sent message created": true
+			},
+			"testPassFailCounts": {
+				"Two sent message created": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				188
+			],
+			"allTests": [
+				{
+					"Two sent message created": true
+				}
+			]
+		},
+		{
+			"id": "8355142f-3b6f-4611-832d-495779a9322c",
+			"name": "/message/<message_id>?sent=True",
+			"url": "https://messaging-system-flask.herokuapp.com/message/1?sent=True",
+			"time": 200,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				200
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "8d66752e-78ae-43b3-bddc-d019cd52bdb0",
+			"name": "/messages",
+			"url": "https://messaging-system-flask.herokuapp.com/messages",
+			"time": 196,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Sent message deleted": true
+			},
+			"testPassFailCounts": {
+				"Sent message deleted": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				196
+			],
+			"allTests": [
+				{
+					"Sent message deleted": true
+				}
+			]
+		},
+		{
+			"id": "5328e4c2-cfb4-4350-805a-33ba6cc749a2",
+			"name": "/auth user2",
+			"url": "https://messaging-system-flask.herokuapp.com/auth",
+			"time": 184,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"User2 get token": true
+			},
+			"testPassFailCounts": {
+				"User2 get token": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				184
+			],
+			"allTests": [
+				{
+					"User2 get token": true
+				}
+			]
+		},
+		{
+			"id": "9ca9b520-e297-4a5c-b44a-b341fad6bd39",
+			"name": "/messages?unread=True",
+			"url": "https://messaging-system-flask.herokuapp.com/messages?unread=True",
+			"time": 197,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Two unread message received": true
+			},
+			"testPassFailCounts": {
+				"Two unread message received": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				197
+			],
+			"allTests": [
+				{
+					"Two unread message received": true
+				}
+			]
+		},
+		{
+			"id": "e8559d8b-5635-4f2f-9529-9ee1a1e7d99d",
+			"name": "/message/<message_id>",
+			"url": "https://messaging-system-flask.herokuapp.com/message/1",
+			"time": 206,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Read one message": true
+			},
+			"testPassFailCounts": {
+				"Read one message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				206
+			],
+			"allTests": [
+				{
+					"Read one message": true
+				}
+			]
+		},
+		{
+			"id": "c380e389-8c04-45d5-92c2-5deeabc13238",
+			"name": "/messages?unread=True",
+			"url": "https://messaging-system-flask.herokuapp.com/messages?unread=True",
+			"time": 501,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"One unread message": true
+			},
+			"testPassFailCounts": {
+				"One unread message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				501
+			],
+			"allTests": [
+				{
+					"One unread message": true
+				}
+			]
+		},
+		{
+			"id": "39cebb75-7673-42fa-bcd8-066974f00b2c",
+			"name": "/message/<message_id>",
+			"url": "https://messaging-system-flask.herokuapp.com/message/1",
+			"time": 195,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"One recived message deleted": true
+			},
+			"testPassFailCounts": {
+				"One recived message deleted": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				195
+			],
+			"allTests": [
+				{
+					"One recived message deleted": true
+				}
+			]
+		},
+		{
+			"id": "3de7814b-74f4-411d-920f-540fdee1f307",
+			"name": "/messages",
+			"url": "https://messaging-system-flask.herokuapp.com/messages",
+			"time": 196,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"one message received": true
+			},
+			"testPassFailCounts": {
+				"one message received": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				196
+			],
+			"allTests": [
+				{
+					"one message received": true
+				}
+			]
+		},
+		{
+			"id": "a14aa205-56e7-4a99-a407-66fe459360f9",
+			"name": "/auth user3",
+			"url": "https://messaging-system-flask.herokuapp.com/auth",
+			"time": 187,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"User3 get token": true
+			},
+			"testPassFailCounts": {
+				"User3 get token": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				187
+			],
+			"allTests": [
+				{
+					"User3 get token": true
+				}
+			]
+		},
+		{
+			"id": "07fa23f1-236b-4289-983c-91cb3723b16e",
+			"name": "/messages",
+			"url": "https://messaging-system-flask.herokuapp.com/messages",
+			"time": 209,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"get only his messages": true
+			},
+			"testPassFailCounts": {
+				"get only his messages": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				209
+			],
+			"allTests": [
+				{
+					"get only his messages": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"collection": {
+		"requests": [
+			{
+				"id": "60694291-6d06-485f-b79f-abfab8c5fc14",
+				"method": "POST"
+			},
+			{
+				"id": "617a8b08-72cd-4d3b-b873-355cb2100072",
+				"method": "POST"
+			},
+			{
+				"id": "4c17cba4-1cf3-4350-ae08-940bb67f5547",
+				"method": "POST"
+			},
+			{
+				"id": "14dbefe8-b51e-47c2-8d62-6b674b7ad633",
+				"method": "POST"
+			},
+			{
+				"id": "e91e2a47-afee-4322-8dce-9935a79ae9d1",
+				"method": "POST"
+			},
+			{
+				"id": "97c4c5f8-e1c7-4af8-ae21-afa3541d2346",
+				"method": "POST"
+			},
+			{
+				"id": "bb5bb0cf-c35c-4f6e-94cf-b14ec0531cc3",
+				"method": "POST"
+			},
+			{
+				"id": "e065cd6d-2cee-4330-8b47-c242b179dd58",
+				"method": "GET"
+			},
+			{
+				"id": "8355142f-3b6f-4611-832d-495779a9322c",
+				"method": "DELETE"
+			},
+			{
+				"id": "8d66752e-78ae-43b3-bddc-d019cd52bdb0",
+				"method": "GET"
+			},
+			{
+				"id": "5328e4c2-cfb4-4350-805a-33ba6cc749a2",
+				"method": "POST"
+			},
+			{
+				"id": "9ca9b520-e297-4a5c-b44a-b341fad6bd39",
+				"method": "GET"
+			},
+			{
+				"id": "e8559d8b-5635-4f2f-9529-9ee1a1e7d99d",
+				"method": "GET"
+			},
+			{
+				"id": "c380e389-8c04-45d5-92c2-5deeabc13238",
+				"method": "GET"
+			},
+			{
+				"id": "39cebb75-7673-42fa-bcd8-066974f00b2c",
+				"method": "DELETE"
+			},
+			{
+				"id": "3de7814b-74f4-411d-920f-540fdee1f307",
+				"method": "GET"
+			},
+			{
+				"id": "a14aa205-56e7-4a99-a407-66fe459360f9",
+				"method": "POST"
+			},
+			{
+				"id": "07fa23f1-236b-4289-983c-91cb3723b16e",
+				"method": "GET"
+			}
+		]
+	}
+}

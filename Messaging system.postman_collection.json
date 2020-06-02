@@ -1,0 +1,801 @@
+{
+	"info": {
+		"_postman_id": "c01726cc-172d-4e4f-9d54-acd6ff0e97be",
+		"name": "Messaging system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/register user1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "54b856b6-8217-414c-9e48-fb1a8b1f2e93",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.test(\"User1 created successfully\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.message).to.eql(\"User created successfully\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"user1@test.test\",\n\t\"password\":\"test1234\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"register"
+					]
+				},
+				"description": "sign up a new user"
+			},
+			"response": []
+		},
+		{
+			"name": "/register user2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aee0e37e-8865-4e94-a32d-61502ba8f352",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.test(\"User2 created successfully\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.message).to.eql(\"User created successfully\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"user2@test.test\",\n\t\"password\":\"test1234\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"register"
+					]
+				},
+				"description": "sign up a new user"
+			},
+			"response": []
+		},
+		{
+			"name": "/register user3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c4ff32c1-3d00-457b-aa2b-1d357e9440f4",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"pm.test(\"User3 created successfully\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.message).to.eql(\"User created successfully\");",
+							"});",
+							"",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"user3@test.test\",\n\t\"password\":\"test1234\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"register"
+					]
+				},
+				"description": "sign up a new user"
+			},
+			"response": []
+		},
+		{
+			"name": "/register user3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c7cc265f-94da-4fce-9f98-d19dfe8e4e7a",
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {",
+							"    pm.response.to.have.status(401);",
+							"});",
+							"pm.test(\"User3 already exist\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.message).to.eql(\"User already exist\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"user3@test.test\",\n\t\"password\":\"test1234\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"register"
+					]
+				},
+				"description": "sign up a new user"
+			},
+			"response": []
+		},
+		{
+			"name": "/auth user1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7c2766ae-c5aa-43fa-8d75-35fd65947796",
+						"exec": [
+							"pm.test(\"User1 get token\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.access_token).to.not.eql(undefined);",
+							"",
+							"    pm.environment.set(\"jwt_token\", jsonData.access_token);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"user1@test.test\",\n    \"password\": \"test1234\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/auth",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/message",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f37ce63f-9fa9-4f34-adc1-9f1f07e7273b",
+						"exec": [
+							"pm.test(\"Message 1 created\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT {{jwt_token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"subject\":\"msg 1\",\n\t\"body\":\"msg from user1 to user2\",\n\t\"receivers_ids\":[2]\n}"
+				},
+				"url": {
+					"raw": "{{url}}/message/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"message",
+						""
+					]
+				},
+				"description": "create new message."
+			},
+			"response": []
+		},
+		{
+			"name": "/message",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1f0e1ff4-6499-448b-b572-b96c38260ab0",
+						"exec": [
+							"pm.test(\"Message 2 created\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT {{jwt_token}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"subject\":\"msg 2\",\n\t\"body\":\"msg from user1 to user2 and user3\",\n\t\"receivers_ids\":[2,3]\n}"
+				},
+				"url": {
+					"raw": "{{url}}/message",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"message"
+					]
+				},
+				"description": "create new message."
+			},
+			"response": []
+		},
+		{
+			"name": "/messages",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3b7b771-5778-444e-b3b7-6bb995d241ab",
+						"exec": [
+							"pm.test(\"Two sent message created\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.sent).to.have.lengthOf(2);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "JWT {{jwt_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/messages",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"messages"
+					]
+				},
+				"description": "return all messages of login user."
+			},
+			"response": []
+		},
+		{
+			"name": "/message/<message_id>?sent=True",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "119fd088-d608-4a2f-aecd-a0748bca2ed8",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "JWT {{jwt_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/message/1?sent=True",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"message",
+						"1"
+					],
+					"query": [
+						{
+							"key": "sent",
+							"value": "True"
+						}
+					]
+				},
+				"description": "delete sent message by id."
+			},
+			"response": []
+		},
+		{
+			"name": "/messages",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3b7b771-5778-444e-b3b7-6bb995d241ab",
+						"exec": [
+							"pm.test(\"Sent message deleted\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.sent).to.have.lengthOf(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "JWT {{jwt_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/messages",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"messages"
+					]
+				},
+				"description": "return all messages of login user."
+			},
+			"response": []
+		},
+		{
+			"name": "/auth user2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7c2766ae-c5aa-43fa-8d75-35fd65947796",
+						"exec": [
+							"pm.test(\"User2 get token\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.access_token).to.not.eql(undefined);",
+							"",
+							"    pm.environment.set(\"jwt_token\", jsonData.access_token);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"user2@test.test\",\n    \"password\": \"test1234\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/auth",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/messages?unread=True",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3f1aa7d6-f68e-4e43-b194-a43ded9bf779",
+						"exec": [
+							"pm.test(\"Two unread message received\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.received).to.have.lengthOf(2);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "JWT {{jwt_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/messages?unread=True",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"messages"
+					],
+					"query": [
+						{
+							"key": "unread",
+							"value": "True"
+						}
+					]
+				},
+				"description": "return all unread messages of login user."
+			},
+			"response": []
+		},
+		{
+			"name": "/message/<message_id>",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1126fa42-9cfc-4df9-9ee4-1d4a1a62085e",
+						"exec": [
+							"pm.test(\"Read one message\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "JWT {{jwt_token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/message/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"message",
+						"1"
+					]
+				},
+				"description": "return specific message by id.\nor 404 if not found"
+			},
+			"response": []
+		},
+		{
+			"name": "/messages?unread=True",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d0cd25e0-1286-497f-8db7-c09e66f35e6a",
+						"exec": [
+							"pm.test(\"One unread message\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.received).to.have.lengthOf(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "JWT {{jwt_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/messages?unread=True",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"messages"
+					],
+					"query": [
+						{
+							"key": "unread",
+							"value": "True"
+						}
+					]
+				},
+				"description": "return all unread messages of login user."
+			},
+			"response": []
+		},
+		{
+			"name": "/message/<message_id>",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f027a383-c1e5-4c12-a9ca-cef4c1dde9aa",
+						"exec": [
+							"pm.test(\"One recived message deleted\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "JWT {{jwt_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/message/1?",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"message",
+						"1"
+					],
+					"query": [
+						{
+							"key": "sent",
+							"value": "True",
+							"disabled": true
+						}
+					]
+				},
+				"description": "delete received message by id."
+			},
+			"response": []
+		},
+		{
+			"name": "/messages",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "21961992-e883-4cd4-9c81-449007694b5b",
+						"exec": [
+							"pm.test(\"one message received\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.received).to.have.lengthOf(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "JWT {{jwt_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/messages",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"messages"
+					]
+				},
+				"description": "return all messages of login user."
+			},
+			"response": []
+		},
+		{
+			"name": "/auth user3",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7c2766ae-c5aa-43fa-8d75-35fd65947796",
+						"exec": [
+							"pm.test(\"User3 get token\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.access_token).to.not.eql(undefined);",
+							"",
+							"    pm.environment.set(\"jwt_token\", jsonData.access_token);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"user3@test.test\",\n    \"password\": \"test1234\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/auth",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/messages",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "90165033-2fb9-4cb0-aca2-7291c49ebbeb",
+						"exec": [
+							"pm.test(\"get only his messages\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.received).to.have.lengthOf(1);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "JWT {{jwt_token}}"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/messages",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"messages"
+					]
+				},
+				"description": "return all messages of login user."
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
