@@ -69,7 +69,7 @@ class MessageList(Resource):
         sent_messages = []
         if unread:
             received_messages = [receiver_association.message.json()
-                                 for receiver_association in user.received_messages.filter_by( read=False)]
+                                 for receiver_association in user.received_messages.filter_by(receiver_id=user.id, read=False)]
         else:
             sent_messages = [message.json() for message in user.sent_messages]
             received_messages = [receiver_association.message.json()
