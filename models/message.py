@@ -46,7 +46,10 @@ class MessageModel(db.Model):
         self.receivers_ids = receivers_ids
 
     def json(self):
-        return {"sender": self.sender.email, "subject": self.subject, "body": self.body, "creation_date": self.creation_date.strftime("%Y-%m-%d %H:%M:%S")}
+        if self.sender:
+            return {"sender": self.sender.email, "subject": self.subject, "body": self.body, "creation_date": self.creation_date.strftime("%Y-%m-%d %H:%M:%S")}
+        else:
+            return {"subject": self.subject, "body": self.body, "creation_date": self.creation_date.strftime("%Y-%m-%d %H:%M:%S")}
 
     @classmethod
     def find_message_by_id(cls, _id):
